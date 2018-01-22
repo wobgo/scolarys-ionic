@@ -1,0 +1,95 @@
+<!--
+  Generated template for the AuthentificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+
+<ion-header>
+
+    <ion-navbar>
+
+
+
+    </ion-navbar>
+
+</ion-header>
+-->
+<ion-content class="content" padding>
+
+    <h2 class="scol" center text-center> SCOLARYS</h2>
+
+   <ion-list >
+       
+  
+
+    <form [formGroup]="auth" >
+
+        <ion-item class="bg-hidden">
+           
+            <ion-label  floating>  <ion-icon name="person"></ion-icon>   Identifiant</ion-label>
+
+            <ion-input id="login" type="text" formControlName="login"  clearInput></ion-input>
+
+        </ion-item>
+
+       <!--  <p *ngIf="!isValid('log')" danger padding-left>nom invalide</p>   -->
+
+        <ion-item class="bg-hidden">
+
+            <ion-label  floating> <ion-icon name="key"></ion-icon> Mot de passe</ion-label>
+
+            <ion-input type="password" formControlName="password"  clearInput></ion-input>
+
+        </ion-item>
+
+        <!-- <p *ngIf="!isValid('password')" danger padding-left>mot de passe invalide</p>  -->
+
+        <div padding>
+
+
+            <button ion-button [disabled]="!auth.valid" (click)="doLogin()">Connexion</button>
+
+        </div>
+
+                 <p text-center  class="error">{{error}}</p>
+
+    </form>
+
+</ion-list>
+
+
+        <a (click)="goToForgetPage()"  class="title"  ion-button block clear  text-lowercase> mot de passe oublie? </a>
+
+
+    <div>
+
+        <p>Vous ne possedez pas de compte</p>
+
+        <a ion-button block clear (click)="goToRegisPage() " class="title" text-lowercase>creer un nouveau compte ?</a>
+
+    </div>
+
+
+
+  <!--   <ion-footer>
+
+        <ion-toolbar>
+
+            <ion-grid>
+
+                <ion-row>
+
+                    <ion-col col-8> <a>conditions d'utilisation </a> </ion-col>
+
+                    <ion-col col-4> <a> aide</a> </ion-col>
+
+                </ion-row>
+
+            </ion-grid>
+
+        </ion-toolbar>
+
+    </ion-footer> -->
+
+
+</ion-content>

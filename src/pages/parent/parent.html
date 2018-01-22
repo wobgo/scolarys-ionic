@@ -1,0 +1,51 @@
+<!--
+  Generated template for the ParentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> <ion-icon name="md-person-add"></ion-icon> Ajouter un parent</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="parent" padding>
+<!-- {{parameter1}} -->
+
+  <h2 color="primary" text-center> formulaire d'inscription </h2>
+
+    <ion-list>
+
+        <form [formGroup] ="parent">
+          
+          <ion-item>
+            <ion-label  floating> <ion-icon name="person"></ion-icon>  Username</ion-label>
+            <ion-input formControlName="parentName"  type="text" value=""  clearInput></ion-input>
+          </ion-item>
+        
+          <ion-item>
+              <ion-label  floating>  <ion-icon name="mail"></ion-icon> Email</ion-label>
+              <ion-input type="text" value="" formControlName="parentMail"  clearInput></ion-input>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label  floating> <ion-icon name="call"></ion-icon>  Contact du parent</ion-label>
+                <ion-input type="text" value="" formControlName="parentContact"  clearInput></ion-input>
+              </ion-item>
+            
+        </form>
+
+        </ion-list>
+
+        <div padding>
+
+            <button    (click)=" newSubscribe()" ion-button >S'inscrire</button>
+
+        </div>
+      
+                  
+</ion-content>

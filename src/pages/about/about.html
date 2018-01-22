@@ -1,0 +1,39 @@
+<!--
+  Generated template for the AboutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>tutoriel de demarrage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="about" padding>
+
+
+  <ion-slides (ionSlideDidChange)="SlideChanged()" pager>
+
+    <ion-slide >
+      <img src="../../assets/"> Au commencement
+    </ion-slide>
+    
+    <ion-slide >
+        <img src="../../assets/"> au milieu
+      </ion-slide>
+
+      <ion-slide >
+          <img src="../../assets/imgs/statistiques2.png">
+           <ul>
+              <li>Evolution</li>
+              <li>Suivi</li>
+          </ul>
+        </ion-slide>
+
+  </ion-slides>
+
+</ion-content>

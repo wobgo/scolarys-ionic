@@ -1,0 +1,35 @@
+
+
+page-authentification {
+
+
+    .content{
+        background-color: rgb(236, 236, 236);
+        background:url("../../assets/imgs/success.jpg");
+    }
+    
+        .header{
+
+            background:url("../../assets/imgs/log.png")no-repeat;
+           // background-size: cover;
+        }
+
+    .scol{
+
+        color: #ffffff;
+        height:5em;
+      
+    }
+
+    .error{
+        color:#f53d3d;
+    }
+
+    ion-item.bg-hidden {
+        background-color: transparent;
+      }
+
+      .title{
+        color: #ffffff;
+      }
+}

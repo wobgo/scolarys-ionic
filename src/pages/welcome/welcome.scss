@@ -1,0 +1,43 @@
+page-welcome {
+    .welcome{
+
+        background-color: #000000;
+    }
+    .fireback{
+       color: #ffffff;
+    }
+    .firebutton{
+
+        background: #ffffff;
+        border-radius: 7em;
+        width: 5em;
+        height: 5em;
+        margin: 2em 0 0 0; 
+    }
+
+   
+    .firebutton button{
+
+        padding:2.3em 0.5em;
+
+    }
+    @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+    
+        to {
+          opacity: 1;
+        }
+    }
+    
+    .fadeIn {
+        animation-name: fadeIn;
+        animation-duration: 7s;
+    }
+    .fadebutton {
+        animation-name:fadeIn;
+        animation-duration: 35s;
+    }
+
+}

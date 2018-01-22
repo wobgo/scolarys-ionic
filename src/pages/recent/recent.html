@@ -1,0 +1,77 @@
+<!--
+  Generated template for the RecentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      
+    <ion-title><ion-icon name="ios-timer-outline"></ion-icon>  Activite recente</ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="recent" padding>
+
+
+          <!-- <p color="light">aucune activite recente</p> -->
+     <h6> cliquer pour repondre aux questions </h6>
+<hr>
+          <!-- <ion-icon name="ios-timer-outline"></ion-icon> -->
+
+
+          <ion-list>
+
+            <button ion-item *ngFor="let item of items" (click)="openModal({charNum:item.QuestionID})"> 
+
+             {{ item?.QuestionID}}
+             
+             {{ item?.qestionText}}
+          
+            </button>  
+
+      </ion-list>  <!--    -->
+          <!-- <button ion-button (click)="openModal()">Open Modal {{data}}}</button>
+
+
+          <ion-list>
+            
+              <ion-list-header>
+
+                Hobbits
+
+              </ion-list-header>
+
+              <a ion-item (click)="openModal({charNum: 0})">
+
+                Gollum
+
+              </a>
+
+              <a ion-item (click)="openModal({charNum: 1})">
+
+                Frodo Baggins
+
+              </a>
+
+              <a ion-item (click)="openModal({charNum: 2})">
+
+                Sam
+
+              </a>
+
+            </ion-list>
+           -->
+
+
+
+
+
+
+
+
+</ion-content>

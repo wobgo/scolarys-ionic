@@ -1,0 +1,107 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+            <ion-buttons left>
+                 <button ion-button icon-only (click)="backArrow()" class="my-style-for-modal">
+                      <ion-icon name="arrow-back">
+                          </ion-icon> 
+                        </button>
+           </ion-buttons> 
+        <ion-title>
+            <ion-icon name="cog"></ion-icon> Parametrage</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <form [formGroup] ="update" >
+
+       <ion-item-group>
+        <ion-item-divider color="light">
+            <ion-icon name="key" color="keygold"></ion-icon> Acces & Securite
+        </ion-item-divider>
+        
+        <ion-item>
+            <ion-label fixed>Identifiant</ion-label>
+            <ion-input type="text" formControlName="loginup"  value="" clearInput></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label fixed>Mot de passe</ion-label>
+            <ion-input type="{{type}}"   formControlName="passup"   clearInput></ion-input>
+           <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="managePassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+           <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="managePassword()"> <ion-icon name="eye"> </ion-icon> </button>
+        </ion-item>
+    
+    </ion-item-group>
+
+
+    <ion-item-group>
+        
+        <ion-item-divider color="light">
+            <ion-icon name="person"></ion-icon> General
+        </ion-item-divider>
+
+
+          <ion-item>
+                        <ion-label fixed>Nom & prenom</ion-label>
+                        <ion-input type="text"  value=""  clearInput></ion-input>
+                    </ion-item>
+
+        <ion-item>
+
+              
+            <ion-label>Genre</ion-label>
+            <ion-select>
+
+                <ion-option value="M" selected="true">Masculin</ion-option>
+                <ion-option value="F">Feminin</ion-option>
+
+            </ion-select>
+        </ion-item>
+
+
+        <ion-item>
+
+            <ion-label fixed>Etablissement</ion-label>
+            <ion-input type="text"   value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Classe</ion-label>
+            <ion-input type="text"  value=""></ion-input>
+        </ion-item>
+
+    </ion-item-group>
+
+    <ion-item-group>
+
+        <ion-item-divider color="light">
+            <ion-icon name="card" color="card"> </ion-icon> Paiement
+
+        </ion-item-divider>
+        <ion-item>
+            <ion-label fixed>Paiement </ion-label>
+            <ion-input type="text" value=""    clearInput ></ion-input>
+        </ion-item>
+    </ion-item-group>
+
+ 
+</form>
+    
+<hr>
+    <div padding>
+        <button (click)="updateProfil()" ion-button>Modifier</button>
+    </div>
+
+
+
+</ion-content>

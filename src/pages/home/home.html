@@ -1,0 +1,360 @@
+<ion-header>
+
+    <ion-navbar *ngIf="search ">
+
+        <button ion-button menuToggle>
+  
+        <ion-icon name="menu"></ion-icon>
+  
+      </button>
+
+
+      <ion-toolbar>
+        
+           <ion-title>Scolarys</ion-title>
+
+        </ion-toolbar>
+       
+        <ion-buttons end>
+
+            <button ion-button icon-only (click)="searchChange()">
+        
+          <ion-icon name="search"></ion-icon>
+        
+        </button>
+
+        </ion-buttons>
+
+    </ion-navbar>
+
+    <ion-navbar *ngIf="!search " (click)="searchChange()">
+
+        <ion-searchbar [(ngModel)]="query" (ionChange)="getItems()" placeholder="Recherche">
+
+        </ion-searchbar>
+
+    </ion-navbar>
+
+      <!-- Segment in a form 
+      <form >
+          <ion-segment color="danger">
+            <ion-segment-button value="standard">
+              Standard
+            </ion-segment-button>
+           
+            <ion-segment-button value="sat">
+              Satellite
+            </ion-segment-button>
+          </ion-segment>
+        </form>
+-->
+
+
+</ion-header>
+
+<ion-content class="content"  padding >
+
+
+
+
+
+
+
+
+
+
+  <ion-fab  right bottom>
+
+    <button ion-fab mini ><ion-icon name="add"></ion-icon></button>
+
+    <ion-fab-list side="left" >
+
+       <button ion-fab (click)="goToInfo()">    <ion-icon name="information-circle"></ion-icon></button>
+
+       <button ion-fab (click)="goToAddrequest()">   <ion-icon name="chatbubbles"></ion-icon></button>
+    
+     
+
+    </ion-fab-list>
+
+  </ion-fab>
+    <!-- <ion-scroll scrollbar-y="true"> 
+
+    <div class="header" padding>
+
+        <h3>cliquez sur une matiere</h3>
+
+    </div>-->
+
+
+
+    <ion-list>
+      <button ion-item *ngFor="let item of items"  class="list card animated bounceInLeft"  (click)="itemSelected(item)">
+        {{ item?.matiereText }}
+      </button> 
+    </ion-list>
+
+  <!--
+    <ion-grid>
+
+      
+     <ion-row>
+      
+      
+        <ion-col col-6 >
+
+            <ion-card  class="list card animated bounceInLeft">
+  
+                <ion-item>
+                
+                    <ion-avatar item-start>
+               
+                        <ion-icon name="open"></ion-icon> 
+
+                    <button ion-button clear>
+                 
+                     evol
+                 
+                  </button>
+                 
+               
+                    </ion-avatar>
+                 
+                </ion-item>
+        
+          </ion-card>
+
+
+        </ion-col>
+     
+      
+        <ion-col col-6>
+
+
+    <ion-card  class="list card animated bounceInRight">
+  
+        <ion-item>
+        
+            <ion-avatar item-start>
+       
+              <img src="../../assets/imgs/trophee.png" >
+
+                  <button ion-button (click)="goToTimeline()" clear >Timeline</button>
+
+            </ion-avatar>
+          
+        </ion-item>
+
+  </ion-card>
+
+
+        </ion-col>
+      
+      
+      </ion-row>
+    
+  <ion-row> 
+    
+    <ion-col  col-6 >
+
+        <ion-card  class="list card animated bounceInRight">
+  
+            <ion-item>
+            
+                <ion-avatar item-start>
+           
+                    <ion-icon name="paper"></ion-icon>
+                    
+                    <button ion-button (click)="goToAbout()" clear >tutoriel</button>
+    
+                </ion-avatar>
+              
+            </ion-item>
+    
+      </ion-card>
+            
+      
+      
+    
+      </ion-col>
+    
+
+      <ion-col  col-6 >
+      
+           <ion-card  class="list card animated bounceInRight">
+  
+        <ion-item>
+        
+            <ion-avatar item-start>
+       
+                <ion-icon name="information-circle"></ion-icon>
+
+               <button ion-button (click)="goToInfo()" clear >info</button>
+
+            </ion-avatar>
+          
+        </ion-item>
+
+  </ion-card>
+        
+      
+        </ion-col>
+      
+  
+  
+  </ion-row>
+    
+    
+    </ion-grid>
+ -->
+
+
+
+
+
+
+
+  
+
+
+<!--     <ion-list>
+
+      <ion-item>
+        <ion-icon name="leaf" item-start></ion-icon>
+         Sciences de la vie
+        
+      </ion-item>
+     
+      <ion-item>
+
+            <ion-icon name="logo-steam" item-start></ion-icon>
+            Physiques
+
+      </ion-item>
+
+      <ion-item>
+        
+          <ion-icon name="color-fill" item-start ></ion-icon>
+             Chimie
+              </ion-item>
+
+        <ion-item >
+
+            <ion-icon name="ios-flower-outline" item-start></ion-icon>
+        </ion-item>
+             
+    </ion-list>
+ 
+    <div class="list card animated bounceInLeft">  
+      <div class="item item-divider">Recent Updates</div>
+      <div class="item item-body">
+        <div>
+          There is a fire in <b>sector 3</b>
+        </div>
+      </div>
+    </div>  
+
+    <div class="list card animated bounceInRight">  
+      <div class="item item-divider">Health</div>
+      <div class="item item-body">
+        <div>
+          You ate an apple today!
+        </div>
+      </div>
+    </div>  
+
+    <div class="list card animated bounceInLeft">  
+      <div class="item item-divider">Recent Updates</div>
+      <div class="item item-body">
+        <div>
+          There is a fire in <b>sector 3</b>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="list card animated bounceInRight">  
+      <div class="item item-divider">Health</div>
+      <div class="item item-body">
+        <div>
+          You ate an apple today!
+        </div>
+      </div>
+    </div>
+    
+    <div class="list card animated infinite tada">  
+      <div class="item item-divider">Upcoming</div>
+      <div class="item item-body">
+        <div>
+          You have <b>29</b> meetings on your calendar tomorrow.
+        </div>
+      </div>
+    </div> 
+
+
+
+
+  <!--       
+    <ion-card *ngFor="let item of modalitems" > 
+            
+              
+            
+              <ion-item>
+                    <ion-avatar item-start>
+                      <img src="img/marty-avatar.png">
+                    </ion-avatar>
+                    <h2>Marty McFly</h2>
+                    <p>November 5, 1955</p>
+                  </ion-item>
+             
+            
+              <ion-card-content>
+                <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+              </ion-card-content>
+            
+              <ion-row>
+                <ion-col>
+                  <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>12 Likes</div>
+                  </button>
+                </ion-col>
+                <ion-col>
+                  <button ion-button icon-left clear small>
+                    <ion-icon name="ios-ribbon-outline"></ion-icon>
+                    <div>4 Comments</div>
+                  </button>
+                </ion-col>
+               
+              </ion-row>
+            
+            </ion-card>
+
+
+ -->
+<!-- 
+        <button ion-item *ngFor="let item of modalitems" (click)="itemSelected(item)" class="selectItem"  >
+
+            
+
+                <ion-icon [name]="item?.icon" item-start></ion-icon>
+                
+                {{ item?.MatiereText }}
+
+                <div class="item-note" item-end>
+                        {{item?.note}}
+                </div>
+
+              
+
+        </button>
+ -->
+<!--- design grid -->
+
+ 
+  
+
+
+<!-- </ion-scroll> -->
+
+</ion-content>
