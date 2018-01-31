@@ -1,23 +1,24 @@
 <ion-menu [content]="content">
 
     <ion-header>
-    
+
         <ion-toolbar>
-    
-            <img src="../assets/imgs/entt.png">
+
+            <!-- <img src="../assets/imgs/entt.png"> -->
+            <img src="../assets/imgs/newlogo.png" style="height:100%; width:100%;">
 
         </ion-toolbar>
-    
+
     </ion-header>
 
     <ion-content>
 
         <ion-list>
-       
+
             <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-       
+
                 <ion-icon name="{{p.icon}}" item-left  color="{{p.color}}"  ></ion-icon>
-       
+
                 {{p.title}}
        </button>
 
@@ -29,7 +30,7 @@
 
             <ion-item>
             <button ion-button icon-only (click)="IsLogged()" clear >
-                <ion-icon name="power" item-left class="power custom-menu"></ion-icon> Se deconnecter 
+                <ion-icon name="power" item-left class="power custom-menu"></ion-icon> Se deconnecter
             </button>
             </ion-item>
 

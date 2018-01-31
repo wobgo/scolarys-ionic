@@ -1,0 +1,15 @@
+.ios, .md {
+
+    page-stats {
+
+        .scroll-content {
+            background-color: map-get($colors, mp-main);
+        }
+
+        ion-card-header {
+            font-weight: bold;
+        }
+
+    }
+
+}

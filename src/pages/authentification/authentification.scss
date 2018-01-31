@@ -6,19 +6,21 @@ page-authentification {
     .content{
         background-color: rgb(236, 236, 236);
         background:url("../../assets/imgs/success.jpg");
+        background-size: cover !important;
+
     }
-    
+
         .header{
 
             background:url("../../assets/imgs/log.png")no-repeat;
-           // background-size: cover;
+            background-size: cover !important;
         }
 
     .scol{
 
         color: #ffffff;
         height:5em;
-      
+
     }
 
     .error{

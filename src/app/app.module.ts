@@ -14,7 +14,7 @@ import {ModalPage} from '../pages/modal/modal';
 import {ForgetPage} from '../pages/forget/forget';
 import {ParentPage} from '../pages/parent/parent';
 import {WelcomePage} from '../pages/welcome/welcome';
-import 'rxjs/Rx'; 
+import 'rxjs/Rx';
 import {FormGroup,FormsModule ,FormBuilder, FormControl,ReactiveFormsModule, Validators,AbstractControl} from '@angular/forms';
 import { Http, HttpModule } from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,6 +30,7 @@ import {AboutPage} from '../pages/about/about';
 import {InfoPage} from '../pages/info/info';
 import {TimelinePage} from '../pages/timeline/timeline';
 import {AddquestPage} from '../pages/addquest/addquest';
+import {StatsPage} from '../pages/stats/stats';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import {AddquestPage} from '../pages/addquest/addquest';
     HomePage,
     ListPage,InfoPage,TimelinePage,
     NewregisPage,ParentPage,WelcomePage,AboutPage,AddquestPage,
-    AuthentificationPage,SettingsPage,RecentPage,ForgetPage
+    AuthentificationPage,SettingsPage,RecentPage,ForgetPage,StatsPage
   ],
   imports: [
     BrowserModule,
@@ -67,14 +68,15 @@ import {AddquestPage} from '../pages/addquest/addquest';
     HomePage,InfoPage,TimelinePage,
     ListPage,AuthentificationPage,
     NewregisPage,ParentPage,WelcomePage,
-    SettingsPage,RecentPage,ForgetPage,AboutPage
+    SettingsPage,RecentPage,ForgetPage,AboutPage,
+    StatsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,NativeAudio,
-    RequestProvider,Network,IonicStorageModule 
+    RequestProvider,Network,IonicStorageModule
   ]
 })
 export class AppModule {}

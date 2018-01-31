@@ -6,40 +6,45 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-      
+  <ion-navbar color="mp-secondary">
+
     <ion-title><ion-icon name="ios-timer-outline"></ion-icon>  Activite recente</ion-title>
-    
+
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content class="recent" padding>
-
 
           <!-- <p color="light">aucune activite recente</p> -->
      <h6> cliquer pour repondre aux questions </h6>
 <hr>
           <!-- <ion-icon name="ios-timer-outline"></ion-icon> -->
 
-
           <ion-list>
 
-            <button ion-item *ngFor="let item of items" (click)="openModal({charNum:item.QuestionID})"> 
+            <button ion-item *ngFor="let item of items" (click)="openModal({charNum:item.QuestionID})">
 
              {{ item?.QuestionID}}
-             
+
              {{ item?.qestionText}}
-          
-            </button>  
+
+            </button>
+
+            <button  (click)="openModal(1)">"
+
+             "QuestionID"
+
+             "qestionText"
+
+            </button>
 
       </ion-list>  <!--    -->
           <!-- <button ion-button (click)="openModal()">Open Modal {{data}}}</button>
 
 
           <ion-list>
-            
+
               <ion-list-header>
 
                 Hobbits

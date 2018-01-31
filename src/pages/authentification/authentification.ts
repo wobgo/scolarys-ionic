@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {FormGroup, FormBuilder, Validators,ReactiveFormsModule} from '@angular/forms';
 import {NewregisPage} from '../newregis/newregis';
 
-import { AuthServiceProvider } from '../../providers/auth-service/auth-service'; 
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { Storage } from '@ionic/storage';
 import { LoadingController } from 'ionic-angular';
 
@@ -27,7 +27,7 @@ export class AuthentificationPage {
   public auth : FormGroup;
   data: any;
   public error:string;
-  
+
 
   constructor(public navCtrl: NavController, private formBuilder: FormBuilder , public navParams: NavParams ,private authService:AuthServiceProvider,public storage: Storage,
     public loadingCtrl: LoadingController) {
@@ -35,17 +35,17 @@ export class AuthentificationPage {
 
 
 ngOnInit(){
-  
+
     this.auth = this.formBuilder.group({
-      
+
           login: ['', Validators.required],
-            
+
           password: ['',Validators.required],
-         
+
           });
-  
+
   }
-  
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AuthentificationPage');
@@ -54,22 +54,23 @@ ngOnInit(){
   doLogin() {
 
     this.presentLoading() ;
-    
+
+    this.goToContainPage();
     this.authService.login(this.auth.value).then((result) => {
       // this.loading.dismiss();
      //  this.console();
-          this.data = result;   
-          
+          this.data = result;
+
           console.log(this.data.verif);
-          
+
           if (this.data.verif !=="erreur"){
-          
-            var splitted = this.data.verif.split("##"); 
+
+            var splitted = this.data.verif.split("##");
 
                          console.log(splitted[0]);
-                         
+
                          this.storage.set('age', splitted[1]);
-                         
+
             //val   =  this.data.verif ;
             /*   this.storage.get('age').thseren((val) => {
               console.log('Your age is', val);
@@ -92,25 +93,25 @@ ngOnInit(){
          this.error = "erreur de connection au serveur verifiez votre connection et reessayer!!";
      });
    }
- 
+
 
   goToRegisPage() {
     //push another page onto the history stack
     //causing the nav controller to animate the new page in
     this.navCtrl.push(NewregisPage);
-  
+
   }
-  
+
   goToContainPage(){
-  
+
     this.navCtrl.setRoot(TabsPage);
 
   }
 
   goToForgetPage(){
-   
+
     this.navCtrl.push(ForgetPage);
-    
+
   }
 
   presentLoading() {
@@ -123,9 +124,9 @@ ngOnInit(){
   }
 
   //this.LoginIput = new FormControl();
-/* 
-  checkPreviousAuthorization(): void { 
-    if((window.localStorage.getItem('username') === "undefined" || window.localStorage.getItem('username') === null) && 
+/*
+  checkPreviousAuthorization(): void {
+    if((window.localStorage.getItem('username') === "undefined" || window.localStorage.getItem('username') === null) &&
        (window.localStorage.getItem('password') === "undefined" || window.localStorage.getItem('password') === null)) {
       this.rootPage =HomePage ;
     } else {
@@ -134,7 +135,7 @@ ngOnInit(){
   }
    */
  console():void{
- 
+
   console.log('test button click ' + JSON.stringify(this.auth.value));
 
 

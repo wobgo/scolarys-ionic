@@ -22,10 +22,16 @@ export class HomePage {
   private  icons: string[];
   // selectedItem: any;
 
-  public modalitems: Array<{title: string, note: string, icon: string}>;
 
+  public modalitems: Array<{title: string, note: string, icon: string}>;
+  public json_data:any;
 
   constructor( public navCtrl: NavController, private http:Http, public navParams: NavParams) {
+    this.http.get('assets/data/cours.json').map(res => res.json()).subscribe(data => {
+               this.json_data = data;
+               console.log("=====data===")
+               console.log(data)
+          });
 
   // If we navigated to this page, we will have an item available as a nav param
  // this.selectedItem = navParams.get('item');
@@ -42,20 +48,20 @@ this.subject();
        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
      });
    }
- 
+
 
   }
 
   public searchChange(){
-  
+
     this.search =! this.search;
- 
+
   }
 
  ionViewDidLoad(){
- 
+
    console.log('Hello HOME TS');
- 
+
 
  }
 
@@ -70,7 +76,7 @@ subject(){
 
    //  this.requestService.loadData(this.SUBJECT_URL);
 
- } 
+ }
  /*  */
  goToAbout(){
 
@@ -83,7 +89,7 @@ goToInfo(){
   this.navCtrl.push(InfoPage);
 
 }
-  
+
 goToTimeline(){
 
   this.navCtrl.push(TimelinePage);

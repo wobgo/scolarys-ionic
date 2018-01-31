@@ -4,7 +4,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Http, HttpModule } from '@angular/http';
-import 'rxjs/Rx'; 
+import 'rxjs/Rx';
 import { Storage } from '@ionic/storage';
 //pages
 import { HomePage } from '../pages/home/home';
@@ -14,6 +14,7 @@ import {AuthentificationPage} from '../pages/authentification/authentification';
 import {NewregisPage} from '../pages/newregis/newregis';
 import {SettingsPage} from '../pages/settings/settings';
 import {RecentPage} from '../pages/recent/recent';
+import {StatsPage} from '../pages/stats/stats';
 //import
 
 
@@ -25,36 +26,39 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   private rootPage: any ; //HomePage
-  private logged : any; 
-  
+  private logged : any;
+
   pages: Array<{title: string, icon: string,color:string ,component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,private storage: Storage) {
     this.initializeApp();
 
   /**/ this.storage.get('age').then((val) => {
-    
+
        if (val!= null){
 
           this.rootPage = TabsPage;
-          
+
        }else
-       
+
        {
 
           this.rootPage  = AuthentificationPage;
-          
+
 
        }
      // console.log('Your age is', val);
     });
- 
+
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home',icon:'home',color:'primary', component: TabsPage },
-      { title: 'Aide',icon:'md-help-circle',color:'', component: AuthentificationPage },
-      { title: 'Parametres',icon:'md-settings',color:'', component: SettingsPage }
+      { title: 'Aide',icon:'md-help-circle',color:'mp-main', component: AuthentificationPage },
+      { title: 'Parametres',icon:'md-settings',color:'keygold', component: SettingsPage },
+      { title: 'Cours',icon:'school',color:'mp-main', component: SettingsPage },
+      { title: 'Progression',icon:'analytics',color:'mp-secondary', component: StatsPage }
+
     ];
 
   }
@@ -70,14 +74,14 @@ export class MyApp {
 
 
   IsLogged(){
-  
+
    /*  */ this.storage.remove('age').then((val) => {
       console.log('Your age is', val);
       //this.rootPage  = AuthentificationPage;
     });;
-    
+
   }
- 
+
 
   openPage(page) {
     // Reset the content nav to have just this page

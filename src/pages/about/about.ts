@@ -28,26 +28,26 @@ export class AboutPage {
   }
 
     SlideChanged(){
-   
+
       let currentIndex = this.slides.getActiveIndex();
-   
+
        // console.log('current index', currentIndex);
-   
+
        if (currentIndex == 2){
-   
+
             this.presentLoading();
-   
+
             this.goToContainPage();
-   
+
         }
- 
+
     }
 
 
   goToContainPage(){
-    
+
       this.navCtrl.setRoot(TabsPage);
-  
+
     }
 
     goToSlide(){
@@ -58,7 +58,7 @@ export class AboutPage {
       let loader = this.loadingCtrl.create({
         dismissOnPageChange: true,
         content: "Veuillez Patienter...",
-        duration: 3000
+        duration: 13000
       });
       loader.present();
     }
