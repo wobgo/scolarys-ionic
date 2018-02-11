@@ -4,9 +4,9 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.  *ngIf="navCtrl.canGoBack()"
 -->
-<ion-header>
+<ion-header >
 
-    <ion-navbar>
+    <ion-navbar color="mp-secondary">
 
         <ion-title>   <ion-icon name="md-person-add"></ion-icon>  Nouveau compte</ion-title>
     </ion-navbar>
@@ -14,51 +14,51 @@
 </ion-header>
 
 
-<ion-content class="newregis" >
+<ion-content class="newregis" center text-center >
 
-  
+
 
         <h2 color="primary" text-center> formulaire d'inscription </h2>
 
         <ion-grid>
-            
+
                <ion-row>
 
-                <ion-col col-12 >
-                    <p class="text-info">*tous les champs sont obligatoires    <ion-icon name="help-circle"></ion-icon></p> 
-                </ion-col> 
-            
+                <ion-col col-12 color="danger">
+                    <p style="color: red;">*tous les champs sont obligatoires    <ion-icon name="help-circle"></ion-icon></p>
+                </ion-col>
+
            </ion-row>
 
-        </ion-grid>    
-          
+        </ion-grid>
 
-    <ion-list>
+
+    <ion-list text-wrap>
 
      <form [formGroup]="usr">
 
         <ion-item>
-            <ion-label  floating><ion-icon name="person"></ion-icon>  Identifiant</ion-label>
+            <ion-label  floating color="primary"><ion-icon name="person"></ion-icon>  Identifiant</ion-label>
             <ion-input type="text" formControlName="nlogin" value=""   clearInput></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label floating> <ion-icon name="key"></ion-icon> Mot de passe</ion-label>
+            <ion-label floating color="primary"> <ion-icon name="key"></ion-icon> Mot de passe</ion-label>
             <ion-input type="password" formControlName="npd"   clearInput ></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label  floating><ion-icon name="person"></ion-icon>  Nom & prenom </ion-label>
+            <ion-label  floating color="primary"><ion-icon name="person"></ion-icon>  Nom & prenom </ion-label>
             <ion-input formControlName="username" type="text" value=""   clearInput></ion-input>
         </ion-item>
 
         <ion-item>
-                <ion-label  floating> <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>   Date de naissance de l'eleve </ion-label>
-                <ion-input formControlName="username" type="text" value=""   clearInput></ion-input>
+                <!-- <ion-label  floating color="primary"> <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>   Date de naissance de l'eleve </ion-label> -->
+                <ion-input formControlName="username" type="date" value=""  placeholder="date de naissance eleve" clearInput></ion-input>
             </ion-item>
 
         <ion-item>
-            <ion-label>Genre</ion-label>
+            <ion-label color="primary">Genre</ion-label>
             <ion-select okText="Ok" cancelText="Annuler" >
 
               <ion-option value="M" selected="true">Masculin</ion-option>
@@ -68,32 +68,32 @@
         </ion-item>
         <ion-item>
 
-          <ion-label fixed>Etablissement </ion-label> 
+          <ion-label fixed color="primary">Etablissement </ion-label>
 
-          
+
           <ion-select okText="Ok" cancelText="Annuler" >
-                
+
                 <ion-option *ngFor="let schl of getSchool" value="{{schl?.EtablissementID}}" >{{schl?.EtablissementText}}</ion-option>
-            
-          
+
+
             </ion-select>
 
         </ion-item>
 
         <ion-item>
-            <ion-label fixed>Classe</ion-label>
+            <ion-label fixed color="primary">Classe</ion-label>
 
             <ion-select okText="Ok" cancelText="Annuler" >
-                
+
                 <ion-option *ngFor="let class of getClass" value="{{class?.ClasseID}}" >{{class?.ClasseText}}</ion-option>
-               
-                
+
+
             </ion-select>
 
         </ion-item>
 
         <ion-item>
-            <ion-label fixed>Paiement </ion-label>
+            <ion-label fixed color="primary">Paiement </ion-label>
             <ion-input type="text" value=""></ion-input>
         </ion-item>
 
@@ -105,7 +105,7 @@
 <hr>
 
     <div padding>
-        <button (click)="Sharing()" ion-button >Suivant</button>
+        <button (click)="Sharing()" ion-button round color="dark" >Suivant</button>
     </div>
 
 </ion-content>

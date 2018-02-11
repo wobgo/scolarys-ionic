@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {TabsPage} from '../tabs/tabs';
+
 
 /**
  * Generated class for the InfoPage page.
@@ -20,6 +22,11 @@ export class InfoPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfoPage');
+  }
+  backArrow(){
+
+    this.navCtrl.setRoot(TabsPage);
+
   }
 
 }

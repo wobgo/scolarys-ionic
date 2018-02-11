@@ -14,18 +14,18 @@
 
 </ion-header>
 -->
-<ion-content class="content" padding>
+<ion-content class="content" padding center text-center>
 
     <h2 class="scol" center text-center> SCOLARYS</h2>
 
    <ion-list >
-       
-  
+
+
 
     <form [formGroup]="auth" >
 
         <ion-item class="bg-hidden">
-           
+
             <ion-label  floating>  <ion-icon name="person"></ion-icon>   Identifiant</ion-label>
 
             <ion-input id="login" type="text" formControlName="login"  clearInput></ion-input>
@@ -47,7 +47,7 @@
         <div padding>
 
 
-            <button ion-button [disabled]="!auth.valid" (click)="doLogin()">Connexion</button>
+            <button ion-button [disabled]="!auth.valid" (click)="doLogin()" round>Connexion</button>
 
         </div>
 
@@ -58,14 +58,14 @@
 </ion-list>
 
 
-        <a (click)="goToForgetPage()"  class="title"  ion-button block clear  text-lowercase> mot de passe oublie? </a>
+        <a (click)="goToForgetPage()"  class="title"  ion-button block clear  text-lowercase round color="danger"> mot de passe oublie? </a>
 
 
     <div>
 
         <p>Vous ne possedez pas de compte</p>
 
-        <a ion-button block clear (click)="goToRegisPage() " class="title" text-lowercase>creer un nouveau compte ?</a>
+        <a ion-button block clear (click)="goToRegisPage() " class="title" text-lowercase round color="mp-secondary">creer un nouveau compte ?</a>
 
     </div>
 

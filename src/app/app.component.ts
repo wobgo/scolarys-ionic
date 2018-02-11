@@ -15,6 +15,9 @@ import {NewregisPage} from '../pages/newregis/newregis';
 import {SettingsPage} from '../pages/settings/settings';
 import {RecentPage} from '../pages/recent/recent';
 import {StatsPage} from '../pages/stats/stats';
+import {InfoPage} from '../pages/info/info';
+import {CoursPage} from '../pages/cours/cours';
+
 //import
 
 
@@ -53,11 +56,13 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home',icon:'home',color:'primary', component: TabsPage },
-      { title: 'Aide',icon:'md-help-circle',color:'mp-main', component: AuthentificationPage },
-      { title: 'Parametres',icon:'md-settings',color:'keygold', component: SettingsPage },
-      { title: 'Cours',icon:'school',color:'mp-main', component: SettingsPage },
+      { title: 'Home',icon:'home',color:'mp-secondary', component: TabsPage },
+      { title: 'Aide',icon:'md-help-circle',color:'mp-secondary', component: InfoPage },
+      { title: 'Info',icon:'information-circle',color:'mp-secondary', component: InfoPage },
+      { title: 'Parametres',icon:'md-settings',color:'mp-secondary', component: SettingsPage },
+      { title: 'Cours',icon:'school',color:'mp-secondary', component: CoursPage },
       { title: 'Progression',icon:'analytics',color:'mp-secondary', component: StatsPage }
+
 
     ];
 
@@ -75,9 +80,10 @@ export class MyApp {
 
   IsLogged(){
 
-   /*  */ this.storage.remove('age').then((val) => {
+   /*  */
+   this.storage.remove('age').then((val) => {
       console.log('Your age is', val);
-      //this.rootPage  = AuthentificationPage;
+      this.rootPage  = AuthentificationPage;
     });;
 
   }

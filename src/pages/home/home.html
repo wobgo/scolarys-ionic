@@ -43,10 +43,6 @@
 
 <ion-content class="content"  padding >
 
-  <ion-icon name="school"></ion-icon>
-  <ion-icon name="book"></ion-icon>
-
-
 
   <ion-fab  right bottom>
 
@@ -68,49 +64,49 @@
       Matieres
     </ion-list-header>
 
-    <ion-item>
+    <ion-item (click)="goToCours()">
       <i class="fa fa-calculator fa-2x" aria-hidden="true"></i>
       Mathematiques
       <ion-note item-end>Mathematiques</ion-note>
     </ion-item>
 
-    <ion-item>
+    <ion-item (click)="goToCours()">
         <ion-icon name="logo-steam" item-start></ion-icon>
              Physiques
              <ion-note item-end>Sciences Physiques</ion-note>
     </ion-item>
 
-    <ion-item>
+    <ion-item (click)="goToCours()">
       <ion-icon name="color-fill" item-start ></ion-icon>
       Chimie
       <ion-note item-end>Chimie</ion-note>
     </ion-item>
 
-    <ion-item>
+    <ion-item (click)="goToCours()">
       <ion-icon name="leaf" item-start></ion-icon>
       Sciences de la vie
       <ion-note item-end>Sciences De La Vie</ion-note>
     </ion-item>
 
-    <ion-item>
+    <ion-item (click)="goToCours()">
       <i class="fa fa-globe fa-2x" aria-hidden="true"></i>
       Geographie
       <ion-note item-end>Phenomenes terrestres</ion-note>
     </ion-item>
 
-    <ion-item>
+    <ion-item (click)="goToCours()">
       <i class="fa fa-history fa-2x" aria-hidden="true"></i>
       Histoire
       <ion-note item-end>etude du passe </ion-note>
     </ion-item>
 
-    <ion-item>
+    <ion-item (click)="goToCours()">
       <ion-icon name='book' item-start></ion-icon>
       Francais
       <ion-note item-end>Langue francaise</ion-note>
     </ion-item>
 
-    <ion-item>
+    <ion-item (click)="goToCours()">
       <i class="fa fa-language fa-2x" aria-hidden="true"></i>
       Anglais
       <ion-note item-end>Langue Anglaise</ion-note>
@@ -128,118 +124,6 @@
       </button>
     </ion-list>
 
-
-    <ion-grid>
-
-
-     <ion-row>
-
-
-        <ion-col col-6 >
-
-            <ion-card  class="list card animated bounceInLeft">
-
-                <ion-item>
-
-                    <ion-avatar item-start>
-
-                        <ion-icon name="open"></ion-icon>
-
-                    <button ion-button clear>
-
-                     evol
-
-                  </button>
-
-
-                    </ion-avatar>
-
-                </ion-item>
-
-          </ion-card>
-
-
-        </ion-col>
-
-
-        <ion-col col-6>
-
-
-    <ion-card  class="list card animated bounceInRight">
-
-        <ion-item>
-
-            <ion-avatar item-start>
-
-              <img src="../../assets/imgs/trophee.png" >
-
-                  <button ion-button (click)="goToTimeline()" clear >Timeline</button>
-
-            </ion-avatar>
-
-        </ion-item>
-
-  </ion-card>
-
-
-        </ion-col>
-
-
-      </ion-row>
-
-  <ion-row>
-
-    <ion-col  col-6 >
-
-        <ion-card  class="list card animated bounceInRight">
-
-            <ion-item>
-
-                <ion-avatar item-start>
-
-                    <ion-icon name="paper"></ion-icon>
-
-                    <button ion-button (click)="goToAbout()" clear >tutoriel</button>
-
-                </ion-avatar>
-
-            </ion-item>
-
-      </ion-card>
-
-
-
-
-      </ion-col>
-
-
-      <ion-col  col-6 >
-
-           <ion-card  class="list card animated bounceInRight">
-
-        <ion-item>
-
-            <ion-avatar item-start>
-
-                <ion-icon name="information-circle"></ion-icon>
-
-               <button ion-button (click)="goToInfo()" clear >info</button>
-
-            </ion-avatar>
-
-        </ion-item>
-
-  </ion-card>
-
-
-        </ion-col>
-
-
-
-  </ion-row>
-
-
-    </ion-grid>
 
 
 

@@ -6,46 +6,46 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="mp-secondary">
     <ion-title> <ion-icon name="md-person-add"></ion-icon> Ajouter un parent</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="parent" padding>
+<ion-content class="parent" padding center text-center>
 <!-- {{parameter1}} -->
 
-  <h2 color="primary" text-center> formulaire d'inscription </h2>
+  <h2 color="primary" text-center> FORMULAIRE D'INSCRIPTION</h2>
 
-    <ion-list>
+    <ion-list center text-center>
 
         <form [formGroup] ="parent">
-          
+
           <ion-item>
-            <ion-label  floating> <ion-icon name="person"></ion-icon>  Username</ion-label>
+            <ion-label   color="primary"> <ion-icon name="person"></ion-icon>  Username</ion-label>
             <ion-input formControlName="parentName"  type="text" value=""  clearInput></ion-input>
           </ion-item>
-        
+
           <ion-item>
-              <ion-label  floating>  <ion-icon name="mail"></ion-icon> Email</ion-label>
+              <ion-label    color="primary">  <ion-icon name="mail"></ion-icon> Email</ion-label>
               <ion-input type="text" value="" formControlName="parentMail"  clearInput></ion-input>
             </ion-item>
-          
+
             <ion-item>
-                <ion-label  floating> <ion-icon name="call"></ion-icon>  Contact du parent</ion-label>
+                <ion-label    color="primary"> <ion-icon name="call"></ion-icon>  Contact du parent</ion-label>
                 <ion-input type="text" value="" formControlName="parentContact"  clearInput></ion-input>
               </ion-item>
-            
+
         </form>
 
         </ion-list>
 
         <div padding>
 
-            <button    (click)=" newSubscribe()" ion-button >S'inscrire</button>
+            <button    (click)=" newSubscribe()" ion-button round>S'inscrire</button>
 
         </div>
-      
-                  
+
+
 </ion-content>

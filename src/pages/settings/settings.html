@@ -10,9 +10,9 @@
             <ion-buttons left>
                  <button ion-button icon-only (click)="backArrow()" class="my-style-for-modal">
                       <ion-icon name="arrow-back">
-                          </ion-icon> 
+                          </ion-icon>
                         </button>
-           </ion-buttons> 
+           </ion-buttons>
         <ion-title>
             <ion-icon name="cog"></ion-icon> Parametrage</ion-title>
     </ion-navbar>
@@ -20,47 +20,47 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content center text-center>
 
   <form [formGroup] ="update" >
 
-       <ion-item-group>
-        <ion-item-divider color="light">
+       <ion-item-group text-wrap>
+        <ion-item-divider color="dark">
             <ion-icon name="key" color="keygold"></ion-icon> Acces & Securite
         </ion-item-divider>
-        
+
         <ion-item>
-            <ion-label fixed>Identifiant</ion-label>
+            <ion-label fixed color="primary">Identifiant :</ion-label>
             <ion-input type="text" formControlName="loginup"  value="" clearInput></ion-input>
         </ion-item>
-        
+
         <ion-item>
-            <ion-label fixed>Mot de passe</ion-label>
+            <ion-label fixed color="primary">Mot de passe</ion-label>
             <ion-input type="{{type}}"   formControlName="passup"   clearInput></ion-input>
            <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="managePassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
            <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="managePassword()"> <ion-icon name="eye"> </ion-icon> </button>
         </ion-item>
-    
+
     </ion-item-group>
 
 
-    <ion-item-group>
-        
-        <ion-item-divider color="light">
+    <ion-item-group text-wrap>
+
+        <ion-item-divider color="dark">
             <ion-icon name="person"></ion-icon> General
         </ion-item-divider>
 
 
           <ion-item>
-                        <ion-label fixed>Nom & prenom</ion-label>
+                        <ion-label fixed color="primary">Nom & prenom :</ion-label>
                         <ion-input type="text"  value=""  clearInput></ion-input>
                     </ion-item>
 
         <ion-item>
 
-              
-            <ion-label>Genre</ion-label>
-            <ion-select>
+
+            <ion-label fixed color="primary">Genre :</ion-label>
+            <ion-select >
 
                 <ion-option value="M" selected="true">Masculin</ion-option>
                 <ion-option value="F">Feminin</ion-option>
@@ -71,35 +71,36 @@
 
         <ion-item>
 
-            <ion-label fixed>Etablissement</ion-label>
+            <ion-label fixed color="primary">Etablissement :</ion-label>
             <ion-input type="text"   value=""></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label fixed>Classe</ion-label>
+            <ion-label fixed color="primary">Classe :</ion-label>
             <ion-input type="text"  value=""></ion-input>
         </ion-item>
 
     </ion-item-group>
 
-    <ion-item-group>
+    <ion-item-group text-wrap>
 
-        <ion-item-divider color="light">
+        <ion-item-divider color="dark">
             <ion-icon name="card" color="card"> </ion-icon> Paiement
 
         </ion-item-divider>
         <ion-item>
-            <ion-label fixed>Paiement </ion-label>
+            <ion-label fixed color="primary">Paiement :</ion-label>
             <ion-input type="text" value=""    clearInput ></ion-input>
         </ion-item>
     </ion-item-group>
 
- 
+
 </form>
-    
+
 <hr>
-    <div padding>
-        <button (click)="updateProfil()" ion-button>Modifier</button>
+
+    <div padding center text-center>
+        <button (click)="updateProfil()" ion-button>Modifier </button>
     </div>
 
 

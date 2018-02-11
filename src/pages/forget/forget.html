@@ -6,44 +6,44 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    
+  <ion-navbar color="dark">
+
     <ion-title>  <img src="../../assets/imgs/lock.png" width="12%" alt="">  Reinitialisation</ion-title>
 
-  
+
 
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="forget" padding>
+<ion-content class="forget" padding center text-center>
 
-<h4>Informations du parent</h4>
+<h3>Informations du parent</h3>
 
 <form [formGroup]="reset">
 
     <ion-list>
-        
+
           <ion-item>
-            <ion-label  floating><ion-icon name="person"></ion-icon> Nom et prenom du parent</ion-label>
+            <ion-label  floating color="mp-secondary"><ion-icon name="person"></ion-icon> Nom et prenom du parent</ion-label>
             <ion-input type="text" value="" formControlName="forgetPname"   clearInput></ion-input>
           </ion-item>
-        
+
           <ion-item>
-              <ion-label  floating> <ion-icon name="mail"></ion-icon>  Email du parent</ion-label>
+              <ion-label  floating color="mp-secondary"> <ion-icon name="mail"></ion-icon>  Email du parent</ion-label>
               <ion-input type="text" value=""  formControlName="forgetPmail"   clearInput></ion-input>
             </ion-item>
-          
+
             <ion-item>
-                <ion-label  floating>  <ion-icon name="call"></ion-icon> Numero du parent</ion-label>
+                <ion-label  floating color="mp-secondary">  <ion-icon name="call"></ion-icon> Numero du parent</ion-label>
                 <ion-input type="text" value=""   formControlName="forgetPnumb"   clearInput></ion-input>
               </ion-item>
-            
-        
+
+
         </ion-list>
 
-        <h4>Informations de l'utilisateur</h4>
+        <h3>Informations de l'utilisateur</h3>
 
         <ion-list>
 
@@ -51,7 +51,7 @@
                 <ion-label floating> <ion-icon name="person"></ion-icon>   Nom et prenom de l'eleve</ion-label>
                 <ion-input type="text" value="" formControlName="username"   clearInput></ion-input>
             </ion-item>
-            
+
            <!--  <ion-item>
                 <ion-label>Start Time</ion-label>
                 <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>
@@ -63,7 +63,7 @@
 
         <div padding>
 
-            <button ion-button full  (click)="regenerate()">Continuez</button>
+            <button ion-button full  (click)="regenerate()" round>Continuez</button>
 
         </div>
 

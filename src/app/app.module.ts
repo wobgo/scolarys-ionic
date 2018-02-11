@@ -31,6 +31,7 @@ import {InfoPage} from '../pages/info/info';
 import {TimelinePage} from '../pages/timeline/timeline';
 import {AddquestPage} from '../pages/addquest/addquest';
 import {StatsPage} from '../pages/stats/stats';
+import {CoursPage} from '../pages/cours/cours';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import {StatsPage} from '../pages/stats/stats';
     HomePage,
     ListPage,InfoPage,TimelinePage,
     NewregisPage,ParentPage,WelcomePage,AboutPage,AddquestPage,
-    AuthentificationPage,SettingsPage,RecentPage,ForgetPage,StatsPage
+    AuthentificationPage,SettingsPage,RecentPage,ForgetPage,StatsPage,CoursPage
   ],
   imports: [
     BrowserModule,
@@ -69,7 +70,8 @@ import {StatsPage} from '../pages/stats/stats';
     ListPage,AuthentificationPage,
     NewregisPage,ParentPage,WelcomePage,
     SettingsPage,RecentPage,ForgetPage,AboutPage,
-    StatsPage
+    StatsPage,
+    CoursPage
   ],
   providers: [
     StatusBar,

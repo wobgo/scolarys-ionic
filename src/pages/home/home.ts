@@ -9,6 +9,8 @@ import { AboutPage } from '../about/about';
 import { InfoPage } from '../info/info';
 import { TimelinePage } from '../timeline/timeline';
 import { AddquestPage } from '../addquest/addquest';
+import { CoursPage } from '../cours/cours';
+
 
 @Component({
   selector: 'page-home',
@@ -99,6 +101,11 @@ goToTimeline(){
   goToAddrequest(){
 
     this.navCtrl.push(AddquestPage);
+
+  }
+  goToCours(){
+
+    this.navCtrl.push(CoursPage);
 
   }
 
